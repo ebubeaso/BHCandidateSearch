@@ -61,7 +61,7 @@ const SingleDateSearch = () => {
     const singleSearch = () => {
         // check to see if you are using the correct Bullhorn rest token
         let userInput = { date: singleDate, url: LoginPages_1.queryUrl, token: restToken };
-        fetch("http://192.168.1.103:5555/search/single", {
+        fetch("http://localhost:5555/search/single", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userInput)
@@ -99,7 +99,7 @@ const BetweenDateSearch = () => {
         // check to see if you are using the correct Bullhorn rest token
         let userInput = { date1: betweenDate1, date2: betweenDate2,
             url: LoginPages_1.queryUrl, token: restToken };
-        fetch("http://192.168.1.103:5555/search/between", {
+        fetch("http://localhost:5555/search/between", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userInput)

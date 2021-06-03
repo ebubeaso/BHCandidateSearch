@@ -21,7 +21,7 @@ const AccessCode = () => {
         }
         console.log(clientId);
         let content = { clientID: clientId, clientSecret: secret, username: user, password: passwd };
-        let link = "http://192.168.1.103:5555/authenticate";
+        let link = "http://localhost:5555/authenticate";
         setLogin(false);
         fetch(link, {
             method: "POST",
