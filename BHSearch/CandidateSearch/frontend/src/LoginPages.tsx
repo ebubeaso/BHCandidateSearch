@@ -56,7 +56,7 @@ export const AccessCode: React.FC | any = () => {
                     value={clientId} onChange={(e) => setClientId(e.target.value)} />
                 
                 <label htmlFor="clientSecret" className="FormLabel">Client Secret</label>
-                <input type="text" name="clienSecret" id="clientSecret" 
+                <input type="text" name="clientSecret" id="clientSecret" 
                     value={secret} onChange={(e) => setSecret(e.target.value)} />
 
                 <label htmlFor="username" className="FormLabel">Username</label>

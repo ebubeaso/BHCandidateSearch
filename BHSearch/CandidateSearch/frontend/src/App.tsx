@@ -227,7 +227,7 @@ export const BetweenDateSearch: React.FC = () => {
                         onChange={(e) => setRestToken(e.target.value)} />
                 <br/>
             </form>
-            <button id="single-search" onClick={betweenSearch}>Search</button>
+            <button id="between-search" onClick={betweenSearch}>Search</button>
             {(searchResult.length > 0) ? resultTable : null}
             </div>
         </div>

@@ -35712,7 +35712,7 @@ const BetweenDateSearch = () => {
                         jsx_runtime_1.jsx("label", Object.assign({ htmlFor: "token-between", className: "FormLabel" }, { children: "Bullhorn Rest Token" }), void 0),
                         jsx_runtime_1.jsx("input", { type: "text", id: "token-between", name: "token-between", value: restToken, onChange: (e) => setRestToken(e.target.value) }, void 0),
                         jsx_runtime_1.jsx("br", {}, void 0)] }), void 0),
-                jsx_runtime_1.jsx("button", Object.assign({ id: "single-search", onClick: betweenSearch }, { children: "Search" }), void 0), (searchResult.length > 0) ? resultTable : null] }), void 0) }, void 0));
+                jsx_runtime_1.jsx("button", Object.assign({ id: "between-search", onClick: betweenSearch }, { children: "Search" }), void 0), (searchResult.length > 0) ? resultTable : null] }), void 0) }, void 0));
 };
 exports.BetweenDateSearch = BetweenDateSearch;
 
@@ -35804,7 +35804,7 @@ const AccessCode = () => {
                 jsx_runtime_1.jsxs("div", Object.assign({ className: "LoginDiv" }, { children: [jsx_runtime_1.jsxs("form", Object.assign({ className: "Login" }, { children: [jsx_runtime_1.jsx("label", Object.assign({ htmlFor: "clientID", className: "FormLabel" }, { children: "Client ID" }), void 0),
                                 jsx_runtime_1.jsx("input", { type: "text", name: "clientID", id: "clientID", value: clientId, onChange: (e) => setClientId(e.target.value) }, void 0),
                                 jsx_runtime_1.jsx("label", Object.assign({ htmlFor: "clientSecret", className: "FormLabel" }, { children: "Client Secret" }), void 0),
-                                jsx_runtime_1.jsx("input", { type: "text", name: "clienSecret", id: "clientSecret", value: secret, onChange: (e) => setSecret(e.target.value) }, void 0),
+                                jsx_runtime_1.jsx("input", { type: "text", name: "clientSecret", id: "clientSecret", value: secret, onChange: (e) => setSecret(e.target.value) }, void 0),
                                 jsx_runtime_1.jsx("label", Object.assign({ htmlFor: "username", className: "FormLabel" }, { children: "Username" }), void 0),
                                 jsx_runtime_1.jsx("input", { type: "text", name: "username", id: "username", value: user, onChange: (e) => setUser(e.target.value) }, void 0),
                                 jsx_runtime_1.jsx("label", Object.assign({ htmlFor: "password", className: "FormLabel" }, { children: "Password" }), void 0),
