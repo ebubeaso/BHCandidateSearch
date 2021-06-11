@@ -1,0 +1,22 @@
+FROM ubuntu:focal
+
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo TZ > /etc/timezone
+
+RUN apt update && apt --no-install-recommends install -y python3 python3-pip iputils-ping nano \
+wget curl iproute2 build-essential nginx gcc python3-dev npm python3-dateutil && \
+mkdir -p /home/ebube/Documents
+
+COPY CandidateSearch/ /home/ebube/Documents/CandidateSearch
+COPY requirements.txt /home/ebube/Documents
+COPY bhSearch.conf /etc/nginx/sites-enabled
+COPY runServices.sh /home/ebube/Documents/CandidateSearch/backend
+
+RUN chmod 775 -R /home/ebube/Documents && rm /etc/nginx/sites-enabled/default && \
+python3 -m pip install setuptools configparser && \
+python3 -m pip install -r /home/ebube/Documents/requirements.txt && \
+cd /home/ebube/Documents/CandidateSearch/frontend && npm install && \
+rm -rf /home/ebube/Documents/CandidateSearch/frontend/node_modules/babel-preset-es201*
+
+WORKDIR /home/ebube/Documents/CandidateSearch/backend
+CMD /home/ebube/Documents/CandidateSearch/backend/runServices.sh

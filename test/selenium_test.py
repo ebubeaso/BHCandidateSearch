@@ -17,18 +17,20 @@ password = creds[3][:(len(creds[3])-1)]
 """
 This is just a test script to test out the web interface for the Bullhorn Search app.
 """
-# options = webdriver.ChromeOptions()
-# options.add_argument("--incognito")
-# browser = webdriver.Chrome(options=options)
+# Using Google Chrome webdriver
+options = webdriver.ChromeOptions()
+options.add_argument("--incognito")
+options.add_argument("--headless")
+browser = webdriver.Chrome(options=options)
 
 # using firefox for the browser
-profile = webdriver.FirefoxProfile()
-profile.set_preference("browser.privatebrowsing.autostart", True)
-options = webdriver.FirefoxOptions()
-options.set_headless()
-browser = webdriver.Firefox(firefox_profile=profile, options=options)
+#profile = webdriver.FirefoxProfile()
+#profile.set_preference("browser.privatebrowsing.autostart", True)
+#options = webdriver.FirefoxOptions()
+#options.set_headless()
+#browser = webdriver.Firefox(firefox_profile=profile, options=options)
 # Get the main page
-browser.get("http://172.17.0.3:80")
+browser.get("http://localhost:800")
 time.sleep(7.0)
 try:
     """
@@ -110,4 +112,6 @@ try:
 except Exception as e:
     print("The between date search did not render properly")
     browser.close()
+print("Hooray! The test finished without any issues!!")
+print("Your app is good for deployment!")
 browser.quit()
